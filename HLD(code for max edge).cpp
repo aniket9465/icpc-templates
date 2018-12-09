@@ -1,27 +1,4 @@
-#include<bits/stdc++.h>
-using namespace std;
-#define ll long long
-#define VV vector
-#define pb push_back
-#define bitc  __builtin_popcountl
-#define m_p make_pair
-#define inf 200000000000000
-#define MAXN 1000001
-#define eps 0.0000000001
-#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);
-string char_to_str(char c){string tem(1,c);return tem;}
-// string to integer stoi()
-// string to long long stoll()
-// string.substr(position,length);
-// integer to string to_string();
-
-//////////////
-
-#define S second
-#define F first
-#define int long long 
-
-/////////////
+///////////// code for max edge on path from node u to v with update of edge weight using HLD
 vector<int> chains[100001];     // stores edge weigth from current node to child in the same chain 
 int chain[100001];              // stores chain number
 int parent[100001][25];         // stores parent 
@@ -96,10 +73,10 @@ void HLD(int chainNo,vector<pair<int,int>> gr[],int i)
         }
     }
     sort(v.begin(),v.end(),greater<pair<pair<int,int>,int>>());
-    if(v.size()!=0)
-        chains[chainNo].push_back(v[0].first.second);
-    else
-        chains[chainNo].push_back(0);
+    if(v.size()!=0)                                                 //
+        chains[chainNo].push_back(v[0].first.second);               //  setting the chain to store the 
+    else                                                            //  weigth of edge from current node
+        chains[chainNo].push_back(0);                               //  to the child on same chain
     int f=1;
     for(auto r:v)
     {

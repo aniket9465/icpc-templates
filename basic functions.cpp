@@ -36,7 +36,7 @@ long long modinverse(long long a, long long b)
     if (x1 < 0) x1 += b0;
     return x1;
 }
-////// convolute 
+////// convolute O(n^2)
 vector<int> convule(vector<int> v1,vector<int> v2)
 {
     vector<int> res;
